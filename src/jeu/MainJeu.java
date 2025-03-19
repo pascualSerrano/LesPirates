@@ -3,14 +3,13 @@ package jeu;
 import affichage.AffichageConsole;
 import affichage.IAffichage;
 import joueurs.Joueur;
-import cartes.Pioche;
+
 
 public class MainJeu {
     public static void main(String[] args) {
         IAffichage affichage = new AffichageConsole();
         Jeu jeu = new Jeu();
 
-        affichage.afficherMessage("🎲 Début du jeu Les Pirates !");
         jeu.demarrerJeu();
 
         while (!jeu.estTermine()) {

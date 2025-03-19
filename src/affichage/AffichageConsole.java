@@ -28,4 +28,42 @@ public class AffichageConsole implements IAffichage {
         choix = scanner.nextInt();
         return choix;
     }
+    
+    
+    //Affichage Class Jeu
+    @Override
+    public void afficherDebutJeu() {
+    	afficherMessage("🎲 Début du jeu Les Pirates !");
+    	afficherMessage("🃏 Distribution des cartes initiales...");
+    }
+    
+    @Override
+    public void afficherTourJeu(Joueur joueur) {
+    	afficherMessage("\n🔄 Tour de " + joueur.getNom());
+    }
+    
+    @Override
+    public void afficherChoixInvalide() {
+    	afficherMessage("❌ Choix invalide, veuillez réessayer.");
+    }
+    
+    @Override
+    public void afficherJouerCarte(Joueur joueur, Carte carteJouee){
+    	afficherMessage(joueur.getNom() + " joue la carte " + carteJouee.getNom());
+    }
+    
+    @Override
+    public void afficherStats(Joueur joueur, Joueur adversaire) {
+        afficherMessage("\n📊 Statistiques des joueurs après l'action :");
+        afficherMessage(joueur.getNom() + " → Vie : " + joueur.getVie() + " | Popularité : " + joueur.getPopularite());
+        afficherMessage(adversaire.getNom() + " → Vie : " + adversaire.getVie() + " | Popularité : " + adversaire.getPopularite());
+    }
+
+    @Override
+    public void afficherMain(String nom, int nombreCartes, Carte main[]) {
+        afficherMessage("\nMain de " + nom + ":");
+        for (int i = 0; i < nombreCartes; i++) {
+            afficherMessage(i + " - " + main[i].getNom());
+        }
+    }
 }

@@ -28,6 +28,10 @@ public class Joueur {
     public int getVie() {
         return vie;
     }
+    
+    public int getNombreCartes() {
+    	return nombreCartes;
+    }
 
     public int getPopularite() {
         return popularite;
@@ -48,21 +52,13 @@ public class Joueur {
         }
     }
 
-    // ✅ Correction : Utilisation d’une instance `affichage`
-    public void afficherMain() {
-        affichage.afficherMessage("\nMain de " + nom + ":");
-        for (int i = 0; i < nombreCartes; i++) {
-            affichage.afficherMessage(i + " - " + main[i].getNom());
-        }
-    }
-
     public Carte[] getMain() {
         return main;
     }
 
     public Carte jouerCarte(int index) {
         if (index < 0 || index >= nombreCartes) {
-            affichage.afficherMessage("⚠ Erreur : Index invalide !");
+            affichage.afficherChoixInvalide();
             return null;
         }
 

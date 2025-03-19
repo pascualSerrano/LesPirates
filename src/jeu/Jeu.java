@@ -19,7 +19,8 @@ public class Jeu {
     }
 
     public void demarrerJeu() {
-        affichage.afficherMessage("🃏 Distribution des cartes initiales...");
+    	affichage.afficherDebutJeu();
+        
         for (int i = 0; i < 5; i++) {
             pioche.piocherCarte(joueur1);
             pioche.piocherCarte(joueur2);
@@ -34,37 +35,35 @@ public class Jeu {
     }
 
     private void jouerTour(Joueur joueur, Joueur adversaire) {
-        affichage.afficherMessage("\n🔄 Tour de " + joueur.getNom());
-
+        
+    	
+        affichage.afficherTourJeu(joueur);
         // ✅ Le joueur pioche une carte avant de jouer
         pioche.piocherCarte(joueur);
 
         // ✅ Afficher la main du joueur une seule fois
-        joueur.afficherMain();
+        affichage.afficherMain(joueur.getNom(), joueur.getNombreCartes(), joueur.getMain());
 
         // ✅ Vérifier le choix du joueur
         int choix = ((AffichageConsole) affichage).choisirCarte(joueur);
         while (choix < 0 || choix >= joueur.getMain().length || joueur.getMain()[choix] == null) {
-            affichage.afficherMessage("❌ Choix invalide, veuillez réessayer.");
+            affichage.afficherChoixInvalide();
             choix = ((AffichageConsole) affichage).choisirCarte(joueur);
         }
 
         // ✅ Jouer la carte choisie
         Carte carteJouee = joueur.jouerCarte(choix);
-        affichage.afficherMessage(joueur.getNom() + " joue la carte " + carteJouee.getNom());
+        affichage.afficherJouerCarte(joueur, carteJouee);
 
         // ✅ Appliquer l'effet de la carte
         carteJouee.effetSpecial(joueur, adversaire);
 
         // ✅ Afficher les statistiques mises à jour
-        afficherStats(joueur, adversaire);
+        affichage.afficherStats(joueur, adversaire);
     }
 
-    private void afficherStats(Joueur joueur, Joueur adversaire) {
-        affichage.afficherMessage("\n📊 Statistiques des joueurs après l'action :");
-        affichage.afficherMessage(joueur.getNom() + " → Vie : " + joueur.getVie() + " | Popularité : " + joueur.getPopularite());
-        affichage.afficherMessage(adversaire.getNom() + " → Vie : " + adversaire.getVie() + " | Popularité : " + adversaire.getPopularite());
-    }
+    
+        
 
     public boolean estTermine() {
         return joueur1.getVie() <= 0 || joueur2.getVie() <= 0 ||
