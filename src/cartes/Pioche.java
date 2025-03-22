@@ -8,13 +8,13 @@ import java.util.Random;
 public class Pioche {
     private Carte[] cartes;
     private int indexPioche;
-    private IAffichage affichage; // ✅ Déclaration de l'affichage
+    private IAffichage affichage; 
 
     public Pioche() {
         genererPioche();
         melangerPioche();
         indexPioche = 0;
-        affichage = new AffichageConsole(); // ✅ Initialisation de l'affichage
+        affichage = new AffichageConsole();
     }
 
     private void genererPioche() {
@@ -72,9 +72,9 @@ public class Pioche {
         if (indexPioche < cartes.length) {
             Carte cartePiochee = cartes[indexPioche++];
             joueur.ajouterCarte(cartePiochee);
-            affichage.afficherMessage(joueur.getNom() + " pioche la carte : " + cartePiochee.getNom()); // ✅ Correction de l'appel
+            affichage.afficherCartePiochee(joueur, cartePiochee);
         } else {
-            affichage.afficherMessage("La pioche est vide !");
+            affichage.afficherPiocheVide();
         }
     }
 }

@@ -14,6 +14,6 @@ public class NormaleVieMoins extends Carte {
     @Override
     public void effetSpecial(Joueur joueur, Joueur adversaire) {
         appliquerEffet(joueur, adversaire, 0, 0, 0, -1);
-        affichage.afficherMessage("Frappez fort mes boucaniers!");
+        affichage.afficherNormaleVieMoins();
     }
 }

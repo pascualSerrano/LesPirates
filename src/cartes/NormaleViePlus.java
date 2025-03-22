@@ -14,6 +14,6 @@ public class NormaleViePlus extends Carte {
     @Override
     public void effetSpecial(Joueur joueur, Joueur adversaire) {
         appliquerEffet(joueur, adversaire, 0, 0, -1, 0);
-        affichage.afficherMessage("Timoners, virez babord, On répare la grande voile!");
+        affichage.afficherNormaleViePlus();
     }
 }

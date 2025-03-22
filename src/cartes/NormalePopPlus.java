@@ -14,6 +14,6 @@ public class NormalePopPlus extends Carte {
     @Override
     public void effetSpecial(Joueur joueur, Joueur adversaire) {
         appliquerEffet(joueur, adversaire, 1, 0, 0, 0);
-        affichage.afficherMessage("Sacrés matelots, ils me croient quand je leurs dis on va gagner hahaha!");
+        affichage.afficherNormalePopPlus();
     }
 }

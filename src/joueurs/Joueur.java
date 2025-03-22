@@ -10,7 +10,7 @@ public class Joueur {
     private int popularite;
     private Carte[] main;
     private int nombreCartes;
-    private IAffichage affichage; // ✅ Ajout de l'affichage
+    private IAffichage affichage;
 
     public Joueur(String nom) {
         this.nom = nom;
@@ -18,7 +18,7 @@ public class Joueur {
         this.popularite = 0;
         this.main = new Carte[5];
         this.nombreCartes = 0;
-        this.affichage = new AffichageConsole(); // ✅ Initialisation correcte de l'affichage
+        this.affichage = new AffichageConsole();
     }
 
     public String getNom() {
@@ -55,7 +55,7 @@ public class Joueur {
     public Carte[] getMain() {
         return main;
     }
-
+    
     public Carte jouerCarte(int index) {
         if (index < 0 || index >= nombreCartes) {
             affichage.afficherChoixInvalide();

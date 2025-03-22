@@ -38,27 +38,28 @@ public class Jeu {
         
     	
         affichage.afficherTourJeu(joueur);
-        // ✅ Le joueur pioche une carte avant de jouer
+        //Le joueur pioche une carte avant de jouer
         pioche.piocherCarte(joueur);
 
-        // ✅ Afficher la main du joueur une seule fois
+        //Afficher la main du joueur une seule fois
         affichage.afficherMain(joueur.getNom(), joueur.getNombreCartes(), joueur.getMain());
 
-        // ✅ Vérifier le choix du joueur
+        //Recupérer le choix du joueur
         int choix = ((AffichageConsole) affichage).choisirCarte(joueur);
+        
         while (choix < 0 || choix >= joueur.getMain().length || joueur.getMain()[choix] == null) {
             affichage.afficherChoixInvalide();
             choix = ((AffichageConsole) affichage).choisirCarte(joueur);
         }
 
-        // ✅ Jouer la carte choisie
+        //Jouer la carte choisie
         Carte carteJouee = joueur.jouerCarte(choix);
         affichage.afficherJouerCarte(joueur, carteJouee);
 
-        // ✅ Appliquer l'effet de la carte
+        //Appliquer l'effet de la carte
         carteJouee.effetSpecial(joueur, adversaire);
 
-        // ✅ Afficher les statistiques mises à jour
+        //Afficher les statistiques mises à jour
         affichage.afficherStats(joueur, adversaire);
     }
 

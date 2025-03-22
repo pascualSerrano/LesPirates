@@ -16,6 +16,22 @@ public interface IAffichage {
     void afficherJouerCarte(Joueur joueur, Carte carteJouee);
     void afficherStats(Joueur joueur, Joueur adversaire);
     
-    //Affichage Class 
+    //Affichage Class Joueur
     void afficherMain(String nom, int nombreCartes, Carte main[]);
+    
+    //Affichage class Pioche
+    void afficherPiocheVide();
+    void afficherCartePiochee(Joueur joueur, Carte cartePiochee);
+    
+    //Affichage class Cartes Normales
+    void afficherNormaleViePlus();
+    void afficherNormaleVieMoins();
+    void afficherNormalePopPlus();
+    void afficherNormalePopMoins();
+    
+    //Affichage Cartes Spéciales
+    void afficherMainDeFer(Joueur joueur);
+    void afficherDiscoursInspirant(Joueur joueur, Joueur adversaire);
+    void afficherCoupDeSabre(Joueur joueur, Joueur adversaire);
+    void afficherAbordageReussi(Joueur joueur, Joueur adversaire);
 }

@@ -14,7 +14,7 @@ public class CoupDeSabre extends Carte {
     @Override
     public void effetSpecial(Joueur joueur, Joueur adversaire) {
         appliquerEffet(joueur, adversaire, 1, 0, 0, -2);
-        affichage.afficherMessage("La lame du reconnu " + joueur.getNom() + " percute sans pitié le flibustier " + adversaire.getNom() +"!");
+        affichage.afficherCoupDeSabre(joueur, adversaire);
         
     }
 }

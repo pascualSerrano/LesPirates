@@ -14,6 +14,6 @@ public class MainDeFer extends Carte {
     @Override
     public void effetSpecial(Joueur joueur, Joueur adversaire) {
         appliquerEffet(joueur, adversaire, 1, 0, 0, -1);
-        affichage.afficherMessage("Belle droite " + joueur.getNom() + "!");
+        affichage.afficherMainDeFer(joueur);
     }
 }

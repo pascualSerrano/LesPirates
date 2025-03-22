@@ -14,6 +14,6 @@ public class AbordageReussi extends Carte {
     @Override
     public void effetSpecial(Joueur joueur, Joueur adversaire) {
         appliquerEffet(joueur, adversaire, 2, -2, -1,-3);
-        affichage.afficherMessage("\n" + joueur.getNom() + " a sauté sur le bateau du terrible " + adversaire.getNom() + "... Pauvre pirate.");
+        affichage.afficherAbordageReussi(joueur, adversaire);
     }
 }

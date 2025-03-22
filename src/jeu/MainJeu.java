@@ -10,6 +10,7 @@ public class MainJeu {
         IAffichage affichage = new AffichageConsole();
         Jeu jeu = new Jeu();
 
+        
         jeu.demarrerJeu();
 
         while (!jeu.estTermine()) {

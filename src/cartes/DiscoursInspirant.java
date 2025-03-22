@@ -14,7 +14,7 @@ public class DiscoursInspirant extends Carte {
     @Override
     public void effetSpecial(Joueur joueur, Joueur adversaire) {
         appliquerEffet(joueur, adversaire, 2, -1, 0, 0);
-        affichage.afficherMessage("Les belles paroles du mousaillon " + joueur.getNom() + " encouragent sa tripulation et font peur au pirates du maintenant effrayé " + adversaire.getNom() + ".");
+        affichage.afficherDiscoursInspirant(joueur, adversaire);
         
     }
 }
