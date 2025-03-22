@@ -70,6 +70,15 @@ public class Jeu {
         return joueur1.getVie() <= 0 || joueur2.getVie() <= 0 ||
                joueur1.getPopularite() >= 5 || joueur2.getPopularite() >= 5;
     }
+    
+    public Joueur[] resultatJeu() {
+        if (joueur1.getVie() <= 0 || joueur2.getPopularite() >= 5) {
+            return new Joueur[]{ joueur2, joueur1 };
+        } else {
+            return new Joueur[]{ joueur1, joueur2 };
+        }
+    }
+
 
     public Joueur getJoueur1() {
         return joueur1;
