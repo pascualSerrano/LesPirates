@@ -15,7 +15,7 @@ public class AffichageConsole implements IAffichage {
 
     @Override
     public void afficherFin(Joueur gagnant, Joueur perdant) {
-        System.out.println("\n🎉 " + gagnant.getNom() + " gagne ! 🏴‍☠️ " + perdant.getNom() + " doit cacher son trésor !");
+        System.out.println("\n🎉 " + gagnant.getNom() + " gagne ! 🏴‍☠️ " + perdant.getNom() + " doit cacher son trésor et revenir en force pour la prochaine partie  !");
     }
 
     @Override
@@ -109,7 +109,7 @@ public class AffichageConsole implements IAffichage {
     
     @Override
     public void afficherDiscoursInspirant(Joueur joueur, Joueur adversaire) {
-    	afficherMessage("Les belles paroles du mousaillon " + joueur.getNom() + " encouragent sa tripulation et font peur au pirates du maintenant effrayé " + adversaire.getNom() + ".");
+    	afficherMessage("Les belles paroles du moussaillon " + joueur.getNom() + " encouragent sa tripulation et font peur au pirates du maintenant effrayé " + adversaire.getNom() + ".");
     }
     
     @Override

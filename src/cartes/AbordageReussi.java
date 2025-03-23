@@ -1,14 +1,11 @@
 package cartes;
 
 import joueurs.Joueur;
-import affichage.IAffichage;
-import affichage.AffichageConsole;
 
 public class AbordageReussi extends Carte {
-	private IAffichage affichage;
     public AbordageReussi() {
         super("Abordage Réussi", Type.ABORDAGE_REUSSI);
-        affichage = new AffichageConsole();
+        
     }
 
     @Override

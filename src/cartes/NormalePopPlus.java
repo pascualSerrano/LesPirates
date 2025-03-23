@@ -1,19 +1,16 @@
 package cartes;
 
 import joueurs.Joueur;
-import affichage.IAffichage;
-import affichage.AffichageConsole;
 
 public class NormalePopPlus extends Carte {
-	private IAffichage affichage;
     public NormalePopPlus() {
         super("Normale Pop Plus", Type.NORMALE_POP_PLUS);
-        affichage = new AffichageConsole();
     }
 
     @Override
     public void effetSpecial(Joueur joueur, Joueur adversaire) {
         appliquerEffet(joueur, adversaire, 1, 0, 0, 0);
+      //appliquerEffet(joueur, adversaire, PopJoueur, PopAdversaire, VieJoueur, VieAdversaire)
         affichage.afficherNormalePopPlus();
     }
 }

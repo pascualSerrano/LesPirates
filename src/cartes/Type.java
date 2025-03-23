@@ -7,10 +7,10 @@ public enum Type {
     NORMALE_VIE_MOINS(9),
     MAIN_DE_FER(4),
     DISCOURS_INSPIRANT(4),
-    ABORDAGE_REUSSI(4),
-    COUP_DE_SABRE(4);
+    ABORDAGE_REUSSI(3),
+    COUP_DE_SABRE(5);
 
-    private final int nombre;
+    private int nombre;
 
     Type(int nombre) {
         this.nombre = nombre;

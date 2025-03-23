@@ -1,10 +1,13 @@
 package affichage;
 
+//import java.util.Scanner;
+
 import cartes.Carte;
 import joueurs.Joueur;
 
 
 public interface IAffichage {
+
     void afficherMessage(String message);
     void afficherFin(Joueur gagnant, Joueur perdant);
     int choisirCarte(Joueur joueur);

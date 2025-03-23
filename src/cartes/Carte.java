@@ -7,7 +7,7 @@ import affichage.IAffichage;
 public abstract class Carte {
     protected String nom;
     protected Type type;
-    private static IAffichage affichage;
+    protected  static IAffichage affichage;
 
     public Carte(String nom, Type type) {
         this.nom = nom;
